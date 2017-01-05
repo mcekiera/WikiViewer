@@ -4,17 +4,21 @@ wikiViewer.directive("searchInput", function () {
 		templateUrl: "tamplates/searchInput.html",
 		scope: {
 			fetchArticles: "=",
-			articles: "="
+			topic: "@"
 		},
 		link: function(scope, elem) {
-			angular.element(".search--deactivated").on("click", function () {
+			scope.topic = "";
+			angular.element(".search--deactivated").on("click", function (event) {
 				elem.children().addClass("search--activated");
 				elem.children().removeClass("search--deactivated");
+				scope.topic = "";
 			});
-			angular.element(".search__exit").on("click", function () {
-				console.log("A")
+			angular.element(".search__exit").on("click", function (event) {
+				event.stopPropagation();
 				elem.children().removeClass("search--activated");
 				elem.children().addClass("search--deactivated");
+				scope.topic = "";
+
 			});
 		}
 

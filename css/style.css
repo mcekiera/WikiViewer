@@ -28,8 +28,7 @@
     font-size: 45px;
     line-height: 45px;
     position: absolute;
-    right: 10px;
-    visibility: hidden; }
+    right: 10px; }
   .search__input {
     background-color: #fff;
     border-radius: 30px;
