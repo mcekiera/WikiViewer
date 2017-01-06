@@ -1,4 +1,4 @@
-$search: red;
+$search: #337AB7;
 
 @mixin transform($str) {
   -webkit-transform: $str;
@@ -10,12 +10,12 @@ $search: red;
 
 * {
   font-family: 'Montserrat', sans-serif;
-  //border: 1px solid #000;
 }
 
 .search {
   display: inline-block;
   position: relative;
+  margin-bottom: 40px;
 
   &__handle {
     @include transform(rotate(45deg));
@@ -42,7 +42,8 @@ $search: red;
     line-height: 45px;
     position: absolute;
     right: 10px;
-    //visibility: hidden;
+    top: 2px;
+    visibility: hidden;
 
   }
 
@@ -60,11 +61,12 @@ $search: red;
 
   &--deactivated {
 
+
     .search__input {
       border-radius: 50%;
       color: #fff;
       width: 45px;
-
+      cursor: pointer;
     }
 
     .search__filler {
@@ -96,6 +98,37 @@ $search: red;
       transition-delay: 1s;
       visibility: visible;
     }
+  }
+}
+
+.header {
+  font-size: 30px;
+  padding: 20px;
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.article_list {
+  list-style-type: none;
+}
+
+.wikiArticle {
+  min-height: 100px;
+
+  &__title {
+    font-size: 34px;
+
+    & a:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__thumbnail {
+    min-height: 100%;
+    float: left;
+    margin: 10px;
   }
 }
 
